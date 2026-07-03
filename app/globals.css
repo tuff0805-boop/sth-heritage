@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FDFAF5;
+  --ink: #1A1208;
+  --gold: #B8860B;
+  --gold-light: #D4A843;
+  --cream: #F7F3EC;
+  --parchment: #EDE6D6;
+  --red: #8B1A1A;
+  --grey: #6B6355;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Gold rule dividers */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #B8860B, transparent);
+}
+
+/* Shimmer animation for gold text */
+@keyframes goldShimmer {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.gold-shimmer {
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EDE6D6;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8860B;
+  border-radius: 3px;
+}
+
+/* Print styles for provenance card */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #provenance-card, #provenance-card * {
+    visibility: visible;
+  }
+  #provenance-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* Tier card hover */
+.tier-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tier-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Cinematic section transitions */
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
