@@ -11,6 +11,12 @@ const navLinks = [
   { href: '/provenance', label: 'Provenance' },
   { href: '/revenue', label: 'Revenue Model' },
   { href: '/landscape', label: 'Landscape' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/personas', label: 'Personas' },
+  { href: '/pestle', label: 'PESTLE' },
+  { href: '/mythology', label: 'Mythology' },
+  { href: '/storyteller', label: 'AI Storyteller' },
+  { href: '/tracker', label: 'Tracker' },
 ]
 
 export default function Navigation() {
